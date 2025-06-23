@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shar M.</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        .dark-color{ background-color: #030712; }
+        .grey-color{ background-color: #1f2937;}
+        .greyish-color{ background-color: #9ca3af; }
+
+        @theme {
+            --color-gray-700: #1f2937;
+            --color-gray-500: #9ca3af;
+        }
+    </style> 
+</head>
+<body class="flex flex-col dark-color  items-center  text-white gap-8 pt-[116px]">
+    <!-- navigation bar -->
+    <nav class=" flex justify-center text-lg py-6 top-0 left-0 right-0 fixed w-full backdrop-blur-[2px]">
+        <ul class="w-[772px] flex justify-between  text-gray-500">
+            <li class="hover:text-white"><a href="#">home</a></li>
+            <li class="hover:text-white"><a href="#">light button</a></li>
+        </ul>
+    </nav>
+    <!-- top-box -->
+    <div class="w-[772px] gap-1 h-[300px] flex grey-color rounded-md p-1">
+        <div class="w-1/3 h-full dark-color rounded-md flex justify-center p-2">
+            <img src="images/MARBELLA.png" alt="" class="rounded-md object-cover">
+        </div>
+        <div class="w-2/3 flex flex-col space-y-1">
+            <div class="dark-color w-full h-5/6 rounded-md text-end flex flex-col gap-4 font-semibold p-2">
+                <div><span class="text-4xl font-extrabold">SHARWIN JOHN</span><br> C. MARBELLA</div>
+                <div>20yo software engineer from Philippines</div>
+                <div>I do some stuff.</div>
+                <div class="flex gap-4 justify-end">
+                    <div class="hover:cursor-pointer">Resume</div>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">GMail</a>
+                </div>
+            </div> 
+            <div class="flex gap-1 w-full h-1/6">
+                <div class="dark-color w-1/2 h-full rounded-md flex justify-center items-center hover:cursor-pointer">
+                    Projects
+                </div>
+                <div class="dark-color w-1/2 h-full rounded-md flex justify-center items-center hover:cursor-pointer">
+                    Contact
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- work-education -->
+    <div class="w-[772px] flex flex-col gap-2 mt-8">
+        <!-- toggle button -->
+        <div class="flex text-center grey-color rounded-md p-1 gap-1 text-sm font-semibold">
+            <div class="w-1/2 dark-color rounded-md p-1 hover:cursor-pointer">Education</div>
+            <div class="w-1/2 grey-color text-gray-500 rounded-md p-1 hover:cursor-pointer">Work</div>
+        </div>
+        <!-- education default -->
+        <div class="w-[772px] dark-color border-1 border-gray-700 rounded-md flex flex-col">
+            <!-- start education -->
+            <div class=" w-full flex relative py-3">
+                <div class="px-4 z-1 ">
+                    <img src="images/tup2.png" alt="" class="z-1 w-[50px] h-[50px] rounded-full object-cover ">
+                </div>
+                <div>
+                    <!-- format: date, title, position, notes -->
+                    <div class="text-xs">August 2023 - Present</div>
+                    <div class="font-bold">Technological University of the Philippines - Taguig Campus</div>
+                    <div class="text-sm font-semibold">Undergrad Student</div>
+                    <div class="text-sm mt-1">
+                        <ul class="ml-4" style="list-style-type:disc;">
+                            <li>Developed blablablab</li>
+                            <li>Created blablabla</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="absolute w-[41px] -translate-y-3 z-0 h-full border-gray-700 border-r"></div>
+            </div>
+            <!-- end education -->
+        </div>
+        <!-- work (NOT APPLICABLE, NOT WORKING YET)-->
+    </div>
+    <!-- projects -->
+    <div class="w-[772px] flex flex-col">
+        <ul class="w-full flex justify-between my-8">
+            <li class="text-3xl font-extrabold">featured projects</li>
+            <li><a href="">view more</a></li>
+        </ul>
+        <div class="flex flex-wrap">
+            <div class="w-1/2 border-gray-700 border-1 rounded-xl">
+                <div class="w-full px-9 pt-9 h-[240px]">
+                    <img src="sample.png" alt="" class="w-full h-full rounded-sm object-cover">
+                </div>
+                <div class="p-6 gap-6 flex flex-col">
+                    <div>
+                        <div class="font-semibold">Project Name</div>
+                        <div class="text-sm text-gray-500">short description</div>
+                    </div>
+                    <div class="text-xs font-semibold flex gap-1">
+                        <span>HTML5</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Tailwind</span>
+                    </div>
+                    <div class="text-xs font-semibold flex gap-1">
+                        <div>Website</div>
+                        <div>Source</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="w-full flex justify-center items-center h-[76px] bottom-0 left-0 right-0">
+        <div class="flex w-[772px] justify-between text-xs">
+            <div>&#169; 2025 Shar M. | portfolio</div>
+            <div class="flex gap-4 justify-end">
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">GMail</a>
+            </div>
+        </div>
+        
+    </footer>
+</body>
+</html>
