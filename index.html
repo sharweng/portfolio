@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,32 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style type="text/tailwindcss">
+        /* Dark mode colors (default) */
         .dark-color{ background-color: #030712; }
         .grey-color{ background-color: #1f2937;}
         .greyish-color{ background-color: #9ca3af; }
+
+        /* Light mode overrides */
+        .light .dark-color { background-color: #ffffff; }
+        .light .grey-color { background-color: #f3f4f6; }
+        .light body { background-color: #f9fafb; color: #111827; }
+        .light .text-white { color: #111827 !important; }
+        .light .text-gray-500 { color: #6b7280 !important; }
+        .light .border-gray-700 { border-color: #d1d5db !important; }
+        
+        /* Light mode hover states - make them black */
+        .light .hover\:text-white:hover { color: #111827 !important; }
+        .light nav li:hover a { color: #111827 !important; }
+        .light nav button:hover { color: #111827 !important; }
+        .light nav button:hover span { color: #111827 !important; }
+        .light a:hover { color: #111827 !important; }
+        .light .group:hover .group-hover\:text-white { color: #111827 !important; }
+        .light footer .hover\:text-white:hover { color: #111827 !important; }
+        .light footer a:hover { color: #111827 !important; }
+        
+        /* Light mode specific styles for tags */
+        .light .tech-tag { background-color: #e5e7eb; color: #374151; }
+        .light .action-button { background-color: #111827; color: #ffffff; }
 
         @theme {
             --color-gray-700: #1f2937;
@@ -17,12 +40,30 @@
         }
     </style> 
 </head>
-<body class="flex flex-col dark-color  items-center  text-white gap-8 pt-[116px]">
+<body class="flex flex-col dark-color items-center text-white gap-8 pt-[116px] transition-colors duration-300">
     <!-- navigation bar -->
-    <nav class=" flex justify-center text-lg py-6 top-0 left-0 right-0 fixed w-full backdrop-blur-[2px]">
-        <ul class="w-[772px] flex justify-between  text-gray-500">
+    <nav class="flex justify-center text-lg py-6 top-0 left-0 right-0 fixed w-full backdrop-blur-[2px]">
+        <ul class="w-[772px] flex justify-between text-gray-500">
             <li class="hover:text-white"><a href="#">home</a></li>
-            <li class="hover:text-white"><a href="#">light button</a></li>
+            <li class="hover:text-white">
+                <button id="theme-toggle" class="flex items-center gap-2">
+                    <span id="theme-text">dark mode</span>
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun hidden">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/>
+                        <path d="M12 20v2"/>
+                        <path d="m4.93 4.93 1.41 1.41"/>
+                        <path d="m17.66 17.66 1.41 1.41"/>
+                        <path d="M2 12h2"/>
+                        <path d="M20 12h2"/>
+                        <path d="m6.34 17.66-1.41-1.41"/>
+                        <path d="m19.07 4.93-1.41 1.41"/>
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                    </svg>
+                </button>
+            </li>
         </ul>
     </nav>
     <!-- top-box -->
@@ -32,25 +73,25 @@
         </div>
         <div class="w-2/3 flex flex-col space-y-1">
             <div class="dark-color w-full h-5/6 rounded-md text-end flex flex-col gap-4 font-semibold p-2">
-                <div><span class="text-4xl font-extrabold">SHARWIN JOHN</span><br> C. MARBELLA</div>
-                <div>20yo software engineer from Philippines</div>
-                <div>I do some stuff.</div>
+                <div><span class="text-4xl font-extrabold text-white">SHARWIN JOHN</span><br> C. MARBELLA</div>
+                <div class="text-white">20yo software engineer from Philippines</div>
+                <div class="text-white">I do some stuff.</div>
                 <div class="flex gap-4 justify-end text-gray-500">
                     <div class="hover:cursor-pointer text-white">Resume</div>
-                    <a href="#" class="group">
+                    <a href="https://www.linkedin.com/in/sharwinjohnmarbella/" target="_blank" class="group" rel="noopener noreferrer">
                         <span class="group-hover:text-blue-500 transition-colors duration-200">Linked</span><span class="group-hover:text-white transition-colors duration-200">In</span>
                     </a>
-                    <a href="#" class="hover:text-white transition-colors duration-200">GitHub</a>
-                    <a href="#" class="group">
+                    <a href="https://github.com/sharweng" target="_blank" class="hover:text-white transition-colors duration-200" rel="noopener noreferrer">GitHub</a>
+                    <a href="mailto:marbellasharwinjohn@gmail.com" onclick="window.open(this.href,'_blank');return false;" target="_blank" class="group" rel="noopener noreferrer">
                         <span class="group-hover:text-blue-500 transition-colors duration-200">G</span><span class="group-hover:text-red-500 transition-colors duration-200">M</span><span class="group-hover:text-yellow-400 transition-colors duration-200">a</span><span class="group-hover:text-blue-500 transition-colors duration-200">i</span><span class="group-hover:text-green-600 transition-colors duration-200">l</span>
                     </a>
                 </div>
             </div> 
             <div class="flex gap-1 w-full h-1/6">
-                <div class="dark-color w-1/2 h-full rounded-md flex justify-center items-center hover:cursor-pointer">
+                <div class="dark-color w-1/2 h-full rounded-md flex justify-center items-center hover:cursor-pointer text-white">
                     Projects
                 </div>
-                <div class="dark-color w-1/2 h-full rounded-md flex justify-center items-center hover:cursor-pointer">
+                <div class="dark-color w-1/2 h-full rounded-md flex justify-center items-center hover:cursor-pointer text-white">
                     Contact
                 </div>
             </div>
@@ -60,22 +101,22 @@
     <div class="w-[772px] flex flex-col gap-2 mt-8">
         <!-- toggle button -->
         <div class="flex text-center grey-color rounded-md p-1 gap-1 text-sm font-semibold">
-            <div class="w-1/2 dark-color rounded-md p-1 hover:cursor-pointer">Education</div>
+            <div class="w-1/2 dark-color rounded-md p-1 hover:cursor-pointer text-white">Education</div>
             <div class="w-1/2 grey-color text-gray-500 rounded-md p-1 hover:cursor-pointer">Work</div>
         </div>
         <!-- education default -->
         <div class="w-[772px] dark-color border-1 border-gray-700 rounded-md flex flex-col">
             <!-- start education -->
-            <div class=" w-full flex relative py-3">
-                <div class="px-4 z-1 ">
-                    <img src="images/tup2.png" alt="" class="z-1 w-[50px] h-[50px] rounded-full object-cover ">
+            <div class="w-full flex relative py-3">
+                <div class="px-4 z-1">
+                    <img src="images/tup2.png" alt="" class="z-1 w-[50px] h-[50px] rounded-full object-cover">
                 </div>
-                <div>
+                <div class="text-white">
                     <!-- format: date, title, position, notes -->
-                    <div class="text-xs">August 2023 - Present</div>
-                    <div class="font-bold">Technological University of the Philippines - Taguig Campus</div>
-                    <div class="text-sm font-semibold">Undergrad Student</div>
-                    <div class="text-sm mt-1">
+                    <div class="text-xs text-gray-500">August 2023 - Present</div>
+                    <div class="font-bold text-white">Technological University of the Philippines - Taguig Campus</div>
+                    <div class="text-sm font-semibold text-white">Undergrad Student</div>
+                    <div class="text-sm mt-1 text-white">
                         <ul class="ml-4" style="list-style-type:disc;">
                             <li>Developed blablablab</li>
                             <li>Created blablabla</li>
@@ -91,7 +132,7 @@
     <!-- projects -->
     <div class="w-[772px] flex flex-col">
         <ul class="w-full flex justify-between my-8">
-            <li class="text-3xl font-extrabold">latest projects</li>
+            <li class="text-3xl font-extrabold text-white">latest projects</li>
             <li>
                 <a href="" class="flex gap-2 items-center text-gray-500 hover:text-white">
                     view more
@@ -100,52 +141,101 @@
             </li>
         </ul>
         <div class="grid grid-cols-2 gap-4">
-            <div class="w- border-gray-700 border-1 rounded-xl">
+            <div class="border-gray-700 border-1 rounded-xl">
                 <div class="w-full px-9 pt-9 h-[240px]">
                     <img src="sample.png" alt="" class="w-full h-full rounded-sm object-cover">
                 </div>
                 <div class="p-6 gap-6 flex flex-col">
                     <div>
-                        <div class="font-semibold">Project Name</div>
+                        <div class="font-semibold text-white">Project Name</div>
                         <div class="text-sm text-gray-500">short description</div>
                     </div>
                     <div class="text-xs font-medium flex gap-1">
-                        <span class="bg-gray-700 px-1 rounded-md py-0.5">HTML5</span>
-                        <span class="bg-gray-700 px-1 rounded-md py-0.5">CSS</span>
-                        <span class="bg-gray-700 px-1 rounded-md py-0.5">JavaScript</span>
-                        <span class="bg-gray-700 px-1 rounded-md py-0.5">Tailwind</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">HTML5</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">CSS</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">JavaScript</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">Tailwind</span>
                     </div>
                     <div class="text-xs font-semibold flex gap-1">
-                        <div class="flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                        <div class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                             Website
                         </div>
-                        <div class="flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12`" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                        <div class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                             Source
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
-        
     </div>
     <!-- footer -->
     <footer class="w-full flex justify-center items-center h-[116px] bottom-0 left-0 right-0">
         <div class="flex w-[772px] justify-between text-sm text-gray-500">
             <div>&#169; 2025 Shar M. | <span class="font-semibold hover:text-white transition-colors duration-200"><a href="#">portfolio</a></span></div>
             <div class="flex gap-4 justify-end">
-                <a href="#" class="group">
+                <a href="https://www.linkedin.com/in/sharwinjohnmarbella/" target="_blank" class="group" rel="noopener noreferrer">
                     <span class="group-hover:text-blue-500 transition-colors duration-200">Linked</span><span class="group-hover:text-white transition-colors duration-200">In</span>
                 </a>
-                <a href="#" class="hover:text-white transition-colors duration-200">GitHub</a>
-                <a href="#" class="group">
+                <a href="https://github.com/sharweng" target="_blank" class="hover:text-white transition-colors duration-200" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:marbellasharwinjohn@gmail.com" target="_blank" class="group" rel="noopener noreferrer">
                     <span class="group-hover:text-blue-500 transition-colors duration-200">G</span><span class="group-hover:text-red-500 transition-colors duration-200">M</span><span class="group-hover:text-yellow-400 transition-colors duration-200">a</span><span class="group-hover:text-blue-500 transition-colors duration-200">i</span><span class="group-hover:text-green-600 transition-colors duration-200">l</span>
                 </a>
             </div>
         </div>
-        
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeText = document.getElementById('theme-text');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or default to 'dark'
+        const savedTheme = localStorage.getItem('theme');
+        let currentTheme = savedTheme || 'dark';
+        
+        // Apply the current theme on page load
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                htmlElement.classList.add('dark');
+                themeText.textContent = 'light mode';
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                htmlElement.classList.remove('light');
+                themeText.textContent = 'dark mode';
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+
+        // Apply theme on page load
+        applyTheme(currentTheme);
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.classList.contains('light')) {
+                // Switch to dark mode
+                currentTheme = 'dark';
+                htmlElement.classList.remove('light');
+                themeText.textContent = 'dark mode';
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Switch to light mode
+                currentTheme = 'light';
+                htmlElement.classList.add('light');
+                themeText.textContent = 'light mode';
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
