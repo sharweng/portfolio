@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shar M.</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style type="text/tailwindcss">
-        /* Dark mode colors (default) */
+        /* dark mode colors */
         .dark-color{ background-color: #030712; }
         .grey-color{ background-color: #1f2937;}
         .greyish-color{ background-color: #9ca3af; }
 
-        /* Light mode overrides */
+        /* light mode overrides */
         .light .dark-color { background-color: #ffffff; }
         .light .grey-color { background-color: #f3f4f6; }
         .light body { background-color: #f9fafb; color: #111827; }
@@ -20,7 +21,7 @@
         .light .text-gray-500 { color: #6b7280 !important; }
         .light .border-gray-700 { border-color: #d1d5db !important; }
         
-        /* Light mode hover states - make them black */
+        /* light mode hover states - make them black */
         .light .hover\:text-white:hover { color: #111827 !important; }
         .light nav li:hover a { color: #111827 !important; }
         .light nav button:hover { color: #111827 !important; }
@@ -30,7 +31,7 @@
         .light footer .hover\:text-white:hover { color: #111827 !important; }
         .light footer a:hover { color: #111827 !important; }
         
-        /* Light mode specific styles for tags */
+        /* light mode specific styles for tags */
         .light .tech-tag { background-color: #e5e7eb; color: #374151; }
         .light .action-button { background-color: #111827; color: #ffffff; }
 
@@ -46,7 +47,7 @@
         <ul class="w-[772px] flex justify-between text-gray-500">
             <li class="hover:text-white"><a href="#">home</a></li>
             <li class="hover:text-white">
-                <button id="theme-toggle" class="flex items-center gap-2">
+                <button id="theme-toggle" class="flex items-center gap-2 hover:cursor-pointer">
                     <span id="theme-text">dark mode</span>
                     <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun hidden">
                         <circle cx="12" cy="12" r="4"/>
@@ -187,18 +188,18 @@
     </footer>
 
     <script>
-        // Theme toggle functionality
+        // theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const themeText = document.getElementById('theme-text');
         const sunIcon = document.getElementById('sun-icon');
         const moonIcon = document.getElementById('moon-icon');
         const htmlElement = document.documentElement;
 
-        // Check for saved theme preference or default to 'dark'
+        // check for saved theme preference or default to 'dark'
         const savedTheme = localStorage.getItem('theme');
         let currentTheme = savedTheme || 'dark';
         
-        // Apply the current theme on page load
+        // apply the current theme on page load
         function applyTheme(theme) {
             if (theme === 'light') {
                 htmlElement.classList.add('dark');
@@ -213,13 +214,13 @@
             }
         }
 
-        // Apply theme on page load
+        // apply theme on page load
         applyTheme(currentTheme);
 
-        // Toggle theme on button click
+        // toggle theme on button click
         themeToggle.addEventListener('click', () => {
             if (htmlElement.classList.contains('light')) {
-                // Switch to dark mode
+                // switch to dark mode
                 currentTheme = 'dark';
                 htmlElement.classList.remove('light');
                 themeText.textContent = 'dark mode';
@@ -227,7 +228,7 @@
                 moonIcon.classList.remove('hidden');
                 localStorage.setItem('theme', 'dark');
             } else {
-                // Switch to light mode
+                // switch to light mode
                 currentTheme = 'light';
                 htmlElement.classList.add('light');
                 themeText.textContent = 'light mode';
