@@ -102,11 +102,11 @@
     <div class="w-[772px] flex flex-col gap-2 mt-8">
         <!-- toggle button -->
         <div class="flex text-center grey-color rounded-md p-1 gap-1 text-sm font-semibold">
-            <div class="w-1/2 dark-color rounded-md p-1 hover:cursor-pointer text-white">Education</div>
-            <div class="w-1/2 grey-color text-gray-500 rounded-md p-1 hover:cursor-pointer">Work</div>
+            <button id="education-btn" class="w-1/2 dark-color rounded-md p-1 hover:cursor-pointer text-white">Education</button>
+            <button id="work-btn" class="w-1/2 grey-color text-gray-500 rounded-md p-1 hover:brightness-85 hover:cursor-pointer">Work</button>
         </div>
-        <!-- education default -->
-        <div class="w-[772px] dark-color border-1 border-gray-700 rounded-md flex flex-col">
+        <!-- education content -->
+        <div id="education-content" class="w-[772px] dark-color border-1 border-gray-700 rounded-md flex flex-col">
             <!-- start education -->
             <div class="w-full flex relative py-3">
                 <div class="px-4 z-1">
@@ -114,13 +114,12 @@
                 </div>
                 <div class="text-white">
                     <!-- format: date, title, position, notes -->
-                    <div class="text-xs text-gray-500">August 2023 - Present</div>
+                    <div class="text-xs text-gray-500">August 2023 - Present</div> 
                     <div class="font-bold text-white">Technological University of the Philippines - Taguig Campus</div>
                     <div class="text-sm font-semibold text-white">Undergrad Student</div>
                     <div class="text-sm mt-1 text-white">
                         <ul class="ml-4" style="list-style-type:disc;">
-                            <li>Developed blablablab</li>
-                            <li>Created blablabla</li>
+                            <li>Developed various projects listed below</li>
                         </ul>
                     </div>
                 </div>
@@ -128,7 +127,28 @@
             </div>
             <!-- end education -->
         </div>
-        <!-- work (NOT APPLICABLE, NOT WORKING YET)-->
+        <!-- work content -->
+        <div id="work-content" class="w-[772px] dark-color border-1 border-gray-700 rounded-md flex-col hidden">
+            <!-- start work -->
+            <div class="w-full flex relative py-3">
+                <div class="px-4 z-1">
+                    <img src="images/NA.png" alt="" class="z-1 w-[50px] h-[50px] rounded-full object-cover">
+                </div>
+                <div class="text-white">
+                    <!-- format: date, title, position, notes -->
+                    <div class="text-xs text-gray-500">TBA</div>
+                    <div class="font-bold text-white">Company Name</div>
+                    <div class="text-sm font-semibold text-white">Position</div>
+                    <div class="text-sm mt-1 text-white">
+                        <ul class="ml-4" style="list-style-type:disc;">
+                            <li>Achievements</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="absolute w-[41px] -translate-y-3 z-0 h-full border-gray-700 border-r"></div>
+            </div>
+            <!-- end work -->
+        </div>
     </div>
     <!-- projects -->
     <div class="w-[772px] flex flex-col">
@@ -385,6 +405,49 @@
                 moonIcon.classList.add('hidden');
                 localStorage.setItem('theme', 'light');
             }
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const educationBtn = document.getElementById('education-btn');
+            const workBtn = document.getElementById('work-btn');
+            const educationContent = document.getElementById('education-content');
+            const workContent = document.getElementById('work-content');
+
+            // function to show education content
+            function showEducation() {
+                // update button styles
+                educationBtn.classList.remove('grey-color', 'text-gray-500', 'hover:brightness-85');
+                educationBtn.classList.add('dark-color', 'text-white');
+                workBtn.classList.remove('dark-color', 'text-white');
+                workBtn.classList.add('grey-color', 'text-gray-500', 'hover:brightness-85');
+                
+                // show/hide content
+                educationContent.classList.remove('hidden');
+                educationContent.classList.add('flex');
+                workContent.classList.remove('flex');
+                workContent.classList.add('hidden');
+            }
+
+            // function to show work content
+            function showWork() {
+                // update button styles
+                workBtn.classList.remove('grey-color', 'text-gray-500', 'hover:brightness-85');
+                workBtn.classList.add('dark-color', 'text-white');
+                educationBtn.classList.remove('dark-color', 'text-white');
+                educationBtn.classList.add('grey-color', 'text-gray-500', 'hover:brightness-85');
+                
+                // show/hide content
+                workContent.classList.remove('hidden');
+                workContent.classList.add('flex');
+                educationContent.classList.remove('flex');
+                educationContent.classList.add('hidden');
+            }
+
+            // add event listeners
+            educationBtn.addEventListener('click', showEducation);
+            workBtn.addEventListener('click', showWork);
+
+            // education is selected by default (already set in HTML)
         });
     </script>
 </body>
