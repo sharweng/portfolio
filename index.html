@@ -73,9 +73,9 @@
             <img src="images/MARBELLA.png" alt="" class="rounded-md object-cover">
         </div>
         <div class="w-2/3 flex flex-col space-y-1">
-            <div class="dark-color w-full h-5/6 rounded-md text-end flex flex-col gap-4 font-semibold p-2">
+            <div class="dark-color w-full h-5/6 rounded-md text-end flex flex-col gap-4 font-semibold p-2 justify-center">
                 <div><span class="text-4xl font-extrabold text-white">SHARWIN JOHN</span><br> C. MARBELLA</div>
-                <div class="text-white">20yo software engineer from Philippines</div>
+                <div class="text-white"><span id="myAge"></span>yo software engineer from Philippines</div>
                 <div class="text-white">I do some stuff.</div>
                 <div class="flex gap-4 justify-end text-gray-500">
                     <div class="hover:cursor-pointer text-white">Resume</div>
@@ -135,13 +135,127 @@
         <ul class="w-full flex justify-between my-8">
             <li class="text-3xl font-extrabold text-white">latest projects</li>
             <li>
-                <a href="" class="flex gap-2 items-center text-gray-500 hover:text-white">
+                <a target="_blank" href="https://github.com/sharweng?tab=repositories" class="flex gap-2 items-center text-gray-500 hover:text-white">
                     view more
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
             </li>
         </ul>
         <div class="grid grid-cols-2 gap-4">
+            <!-- MERN SAMPLE -->
+            <div class="border-gray-700 border-1 rounded-xl">
+                <div class="w-full px-9 pt-9 h-[240px]">
+                    <img src="images/Projects/sharnote.png" alt="" class="w-full h-full rounded-sm object-cover">
+                </div>
+                <div class="p-6 gap-6 flex flex-col">
+                    <div>
+                        <div class="font-semibold text-white">SharNote</div>
+                        <div class="text-sm text-gray-500">note taking website by following FreeCodeCamp</div>
+                    </div>
+                    <div class="text-xs font-medium flex gap-1">
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">MongoDB</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">ExpressJS</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">React</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">NodeJS</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">Tailwind</span>
+                    </div>
+                    <div class="text-xs font-semibold flex gap-1">
+                        <a target="_blank" href="https://two025fccmern1.onrender.com/" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            Website
+                        </a>
+                        <a target="_blank" href="https://github.com/sharweng/2025fccMERN1" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FEED A STRAY PROJECT -->
+            <div class="border-gray-700 border-1 rounded-xl">
+                <div class="w-full px-9 pt-9 h-[240px]">
+                    <img src="images/Projects/feed-a-stray.png" alt="" class="w-full h-full rounded-sm object-cover">
+                </div>
+                <div class="p-6 gap-6 flex flex-col">
+                    <div>
+                        <div class="font-semibold text-white">Feed-A-Stray Demo</div>
+                        <div class="text-sm text-gray-500">sample ui made for a school project</div>
+                    </div>
+                    <div class="text-xs font-medium flex gap-1">
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">HTML5</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">CSS</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">JavaScript</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">Tailwind</span>
+                    </div>
+                    <div class="text-xs font-semibold flex gap-1">
+                        <a target="_blank" href="https://sharweng.github.io/Feed-A-Stray/" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            Website
+                        </a>
+                        <a target="_blank" href="https://github.com/sharweng/Feed-A-Stray" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- MULTI MEDIA WEBSITE -->
+            <div class="border-gray-700 border-1 rounded-xl">
+                <div class="w-full px-9 pt-9 h-[240px]">
+                    <img src="images/Projects/multimedia.png" alt="" class="w-full h-full rounded-sm object-cover">
+                </div>
+                <div class="p-6 gap-6 flex flex-col">
+                    <div>
+                        <div class="font-semibold text-white">MultiMedia Portfolio</div>
+                        <div class="text-sm text-gray-500">website made for uploading my rotoscope and blender (python) work for the subject</div>
+                    </div>
+                    <div class="text-xs font-medium flex gap-1">
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">HTML5</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">CSS</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">JavaScript</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">Tailwind</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">Python</span>
+                    </div>
+                    <div class="text-xs font-semibold flex gap-1">
+                        <a target="_blank" href="https://sharweng.github.io/multimedia/" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            Website
+                        </a>
+                        <a target="_blank" href="https://github.com/sharweng/multimedia" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- OS WEBSITE PROJECT -->
+            <div class="border-gray-700 border-1 rounded-xl">
+                <div class="w-full px-9 pt-9 h-[240px]">
+                    <img src="images/Projects/operating-systems.png" alt="" class="w-full h-full rounded-sm object-cover">
+                </div>
+                <div class="p-6 gap-6 flex flex-col">
+                    <div>
+                        <div class="font-semibold text-white">ITOS220-T: Operating Systems</div>
+                        <div class="text-sm text-gray-500">simple website for posting windows installation videos for a project</div>
+                    </div>
+                    <div class="text-xs font-medium flex gap-1">
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">HTML5</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">CSS</span>
+                        <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">Bootstrap</span>
+                    </div>
+                    <div class="text-xs font-semibold flex gap-1">
+                        <a target="_blank" href="https://sharweng.github.io/sjmOSwebsite/" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            Website
+                        </a>
+                        <a target="_blank" href="https://github.com/sharweng/sjmOSwebsite" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- PROJECT TEMPLATE -->
             <div class="border-gray-700 border-1 rounded-xl">
                 <div class="w-full px-9 pt-9 h-[240px]">
                     <img src="sample.png" alt="" class="w-full h-full rounded-sm object-cover">
@@ -158,14 +272,14 @@
                         <span class="tech-tag bg-gray-700 px-1 rounded-md py-0.5 text-white">Tailwind</span>
                     </div>
                     <div class="text-xs font-semibold flex gap-1">
-                        <div class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                        <a target="_blank" href="" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                             Website
-                        </div>
-                        <div class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
+                        </a>
+                        <a target="_blank" href="" class="action-button flex justify-center items-center gap-1 bg-white text-black py-1 px-2 rounded-md hover:cursor-pointer hover:brightness-[0.85]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                             Source
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -174,7 +288,7 @@
     <!-- footer -->
     <footer class="w-full flex justify-center items-center h-[116px] bottom-0 left-0 right-0">
         <div class="flex w-[772px] justify-between text-sm text-gray-500">
-            <div>&#169; 2025 Shar M. | <span class="font-semibold hover:text-white transition-colors duration-200"><a href="#">portfolio</a></span></div>
+            <div>&#169; <span id="currentYearDisplay"></span> Shar M. | <span class="font-semibold hover:text-white transition-colors duration-200"><a href="#">portfolio</a></span></div>
             <div class="flex gap-4 justify-end">
                 <a href="https://www.linkedin.com/in/sharwinjohnmarbella/" target="_blank" class="group" rel="noopener noreferrer">
                     <span class="group-hover:text-blue-500 transition-colors duration-200">Linked</span><span class="group-hover:text-white transition-colors duration-200">In</span>
@@ -188,6 +302,41 @@
     </footer>
 
     <script>
+        // current year
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.getElementById('currentYearDisplay');
+
+            if (yearElement) {
+                yearElement.textContent = currentYear;
+            }
+        });
+
+        // age
+        document.addEventListener('DOMContentLoaded', function() {
+            function calculateAge(birthMonth, birthDay, birthYear) {
+                const today = new Date();
+                const birthDate = new Date(birthYear, birthMonth - 1, birthDay); // Note: months are 0-indexed in JavaScript
+
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const monthDifference = today.getMonth() - birthDate.getMonth();
+                const dayDifference = today.getDate() - birthDate.getDate();
+
+                if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+                    age--;
+                }
+                return age;
+            }
+
+            const myAge = calculateAge(4, 24, 2005);
+
+            const ageElement = document.getElementById('myAge');
+
+            if (ageElement) {
+                ageElement.textContent = myAge;
+            }
+        });
+
         // theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const themeText = document.getElementById('theme-text');
